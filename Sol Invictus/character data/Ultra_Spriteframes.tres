@@ -1,0 +1,110 @@
+[gd_resource type="SpriteFrames" load_steps=18 format=2]
+
+[ext_resource path="res://Sprites/Characters/Ultra_low_res.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 34, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
+region = Rect2( 17, 34, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 34, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 2 )
+region = Rect2( 51, 34, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 2 )
+region = Rect2( 51, 17, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 17, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 51, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 2 )
+region = Rect2( 17, 17, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 17, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 51, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 17, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 2 )
+region = Rect2( 51, 51, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 17, 0, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 0, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 51, 0, 17, 17 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 17, 17, 17 )
+
+[resource]
+animations = [ {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 28 ) ],
+"loop": true,
+"name": "Ball",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 29 ) ],
+"loop": true,
+"name": "Dive",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 30 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ) ],
+"loop": true,
+"name": "Mach Turn",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 31 ) ],
+"loop": true,
+"name": "Spin Dash",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ), SubResource( 33 ) ],
+"loop": true,
+"name": "Tip Toe",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+} ]

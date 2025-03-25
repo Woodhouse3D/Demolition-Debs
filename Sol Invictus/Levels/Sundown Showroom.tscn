@@ -1,0 +1,266 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Game_UI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level Objects/Interactables/Goal_Ring.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player_rb.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level Objects/Platforms/SS_Platform Large.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Decoration/palm.png" type="Texture" id=5]
+[ext_resource path="res://Level Objects/Platforms/Iguanopolis_DcurveB.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level Objects/Platforms/C Curve.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level Objects/Ottbots/Baloon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level Objects/Interactables/Round_Bumper.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level Objects/Platforms/Brick.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level Objects/Interactables/Spring_Red.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Level Objects/Interactables/Spring_test.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Level Objects/Platforms/Platform Small 2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Level Objects/Platforms/Outdoor_table.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Background_Sunset.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sprites/Other/sunset_foodtruck.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Signs/Cafe_sign.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Signs/Tradeshow_sign.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Decoration/Sunset_lamppost.png" type="Texture" id=19]
+[ext_resource path="res://Level Objects/Platforms/Platform Small 1.tscn" type="PackedScene" id=20]
+
+[node name="Sundown Showroom" type="Node2D"]
+
+[node name="UI" parent="." instance=ExtResource( 1 )]
+
+[node name="Goal_Ring" parent="." instance=ExtResource( 2 )]
+position = Vector2( 868, -2164 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Palm" type="Sprite" parent="Background"]
+position = Vector2( 948, -128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Palm2" type="Sprite" parent="Background"]
+position = Vector2( 636, -132 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Palm3" type="Sprite" parent="Background"]
+position = Vector2( 332, -136 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="IguanopolisTruck" type="Sprite" parent="Background"]
+position = Vector2( 2299, -93 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 16 )
+
+[node name="CafeSign" type="Sprite" parent="Background"]
+position = Vector2( 2137, -238 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 17 )
+centered = false
+
+[node name="TradeshowSign" type="Sprite" parent="Background"]
+position = Vector2( 872, -292 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 18 )
+
+[node name="SunsetLamppost" type="Sprite" parent="Background"]
+position = Vector2( 2588, -120 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+
+[node name="SunsetLamppost2" type="Sprite" parent="Background"]
+position = Vector2( 2488, -536 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+
+[node name="SunsetLamppost3" type="Sprite" parent="Background"]
+position = Vector2( 1784, -660 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="SunsetLamppost4" type="Sprite" parent="Background"]
+position = Vector2( 2128, -1396 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="SunsetLamppost5" type="Sprite" parent="Background"]
+position = Vector2( 1360, -1236 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="SunsetLamppost6" type="Sprite" parent="Background"]
+position = Vector2( 556, -1228 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="Platform Large" parent="Terrain" instance=ExtResource( 4 )]
+
+[node name="Platform Large14" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( -48, 48 )
+rotation = -1.57079
+
+[node name="Platform Large4" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 1928, 0 )
+
+[node name="Platform Large5" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 1596, -420 )
+
+[node name="Platform Large7" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 92, -524 )
+
+[node name="Platform Large8" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 92, -1500 )
+rotation = 1.57079
+
+[node name="Platform Large9" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 488, -1008 )
+
+[node name="Platform Large10" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 2028, -1156 )
+
+[node name="Platform Large11" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 3284, -1316 )
+rotation = 0.261799
+
+[node name="Platform Large13" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 4252, -996 )
+rotation = -1.309
+
+[node name="Platform Large12" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 2004, -1672 )
+rotation = 0.261799
+
+[node name="Platform Large15" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 980, -1952 )
+rotation = 0.261799
+
+[node name="Platform Large6" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 2920, 48 )
+rotation = -1.57079
+
+[node name="Platform Large2" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 1160, 144 )
+rotation = 1.57079
+
+[node name="Dcurve" parent="Terrain" instance=ExtResource( 6 )]
+position = Vector2( 1016, 144 )
+
+[node name="Platform Large3" parent="Terrain" instance=ExtResource( 4 )]
+position = Vector2( 1832, 144 )
+rotation = 1.57079
+
+[node name="Dcurve2" parent="Terrain" instance=ExtResource( 6 )]
+position = Vector2( 1928, 144 )
+rotation = -1.57079
+
+[node name="C-Curve" parent="Terrain" instance=ExtResource( 7 )]
+position = Vector2( 1160, 476 )
+scale = Vector2( 4, 4 )
+
+[node name="C-Curve2" parent="Terrain" instance=ExtResource( 7 )]
+position = Vector2( 1792, 476 )
+rotation = -1.57079
+scale = Vector2( 4, 4 )
+
+[node name="C-Curve3" parent="Terrain" instance=ExtResource( 7 )]
+position = Vector2( 2928, 0 )
+rotation = -1.57079
+scale = Vector2( 4, 4 )
+
+[node name="C-Curve4" parent="Terrain" instance=ExtResource( 7 )]
+position = Vector2( 92, -516 )
+scale = Vector2( 4, 4 )
+
+[node name="C-Curve5" parent="Terrain" instance=ExtResource( 7 )]
+position = Vector2( 80, -1256 )
+rotation = 1.57079
+scale = Vector2( 4, 4 )
+
+[node name="Brick" parent="Terrain" instance=ExtResource( 10 )]
+position = Vector2( 1116, -1040 )
+
+[node name="C-Curve6" parent="Terrain" instance=ExtResource( 7 )]
+position = Vector2( 3192, -1156 )
+rotation = -1.57079
+
+[node name="Outdoor_table" parent="Terrain" instance=ExtResource( 14 )]
+position = Vector2( 1076, 32 )
+
+[node name="Outdoor_table2" parent="Terrain" instance=ExtResource( 14 )]
+position = Vector2( 2056, 0 )
+
+[node name="Outdoor_table3" parent="Terrain" instance=ExtResource( 14 )]
+position = Vector2( 2428, 4 )
+
+[node name="Platform Small 2" parent="Terrain" instance=ExtResource( 13 )]
+position = Vector2( 3256, -1308 )
+rotation = 0.261799
+
+[node name="Platform Small" parent="Terrain" instance=ExtResource( 20 )]
+position = Vector2( 1784, 196 )
+rotation = -1.57079
+
+[node name="Platform Small2" parent="Terrain" instance=ExtResource( 20 )]
+position = Vector2( 1784, -40 )
+rotation = -1.57079
+
+[node name="Platform Small3" parent="Terrain" instance=ExtResource( 20 )]
+position = Vector2( 1128, 240 )
+rotation = -1.57079
+
+[node name="Platform Small4" parent="Terrain" instance=ExtResource( 20 )]
+position = Vector2( 1128, -4 )
+rotation = -1.57079
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Baloons" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 1472, -160 )
+
+[node name="Baloons2" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 1888, -732 )
+
+[node name="Baloons3" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 1680, -1276 )
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Round_Bumper4" parent="Interactables" instance=ExtResource( 9 )]
+position = Vector2( 1608, 136 )
+
+[node name="Round_Bumper9" parent="Interactables" instance=ExtResource( 9 )]
+position = Vector2( 1256, 28 )
+rotation = 3.14159
+
+[node name="Round_Bumper10" parent="Interactables" instance=ExtResource( 9 )]
+position = Vector2( 1696, 32 )
+rotation = 3.14159
+
+[node name="Round_Bumper5" parent="Interactables" instance=ExtResource( 9 )]
+position = Vector2( 1468, 36 )
+
+[node name="Round_Bumper6" parent="Interactables" instance=ExtResource( 9 )]
+position = Vector2( 1336, 132 )
+
+[node name="Spring" parent="Interactables" instance=ExtResource( 11 )]
+position = Vector2( 4260, -1080 )
+rotation = -1.309
+
+[node name="Spring2" parent="Interactables" instance=ExtResource( 12 )]
+position = Vector2( 1784, -968 )
+
+[node name="Spring3" parent="Interactables" instance=ExtResource( 12 )]
+position = Vector2( 1840, -968 )
+
+[node name="Spring4" parent="Interactables" instance=ExtResource( 11 )]
+position = Vector2( 1076, -60 )
+
+[node name="Player_RigidBody" parent="." instance=ExtResource( 3 )]
+position = Vector2( 60, -32 )
+ball_gravitydownslope = 4.0
+
+[node name="background_SunsetShowroom" parent="." instance=ExtResource( 15 )]

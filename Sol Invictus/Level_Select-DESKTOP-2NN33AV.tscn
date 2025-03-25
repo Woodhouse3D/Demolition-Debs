@@ -1,0 +1,190 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Sprites/Terrain/Checkerboard.png" type="Texture" id=1]
+[ext_resource path="res://background rotate.tres" type="Animation" id=2]
+[ext_resource path="res://Sprites/Signs/DD_banner.png" type="Texture" id=3]
+[ext_resource path="res://Level_Select.gd" type="Script" id=4]
+[ext_resource path="res://new_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Levels/Tutorial.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Iguanopolis_Act2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://character data/Harvey_Spriteframes.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://character data/Ultra_Spriteframes.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://character data/Metal_Spriteframes.tres" type="SpriteFrames" id=10]
+[ext_resource path="res://Character Select.gd" type="Script" id=11]
+[ext_resource path="res://character data/Harvey.tres" type="Resource" id=12]
+[ext_resource path="res://character data/Metal.tres" type="Resource" id=13]
+[ext_resource path="res://character data/Ultra.tres" type="Resource" id=14]
+[ext_resource path="res://Levels/Sundown Showroom.tscn" type="PackedScene" id=15]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "background rotate"
+
+[sub_resource type="AnimationNodeStateMachine" id=3]
+"states/background rotate/node" = SubResource( 2 )
+"states/background rotate/position" = Vector2( 465, 82 )
+start_node = "background rotate"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+scene1 = ExtResource( 6 )
+scene2 = ExtResource( 7 )
+scene3 = ExtResource( 15 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_left = -688.0
+margin_top = -736.0
+margin_right = 512.0
+margin_bottom = 464.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 600, 600 )
+texture = ExtResource( 1 )
+stretch_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+anims/RESET = SubResource( 1 )
+"anims/background rotate" = ExtResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="TextureRect/AnimationPlayer"]
+tree_root = SubResource( 3 )
+anim_player = NodePath("..")
+active = true
+parameters/playback = SubResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DdBanner" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 332, -160 )
+scale = Vector2( 0.535484, 0.517949 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+margin_left = 360.0
+margin_top = 32.0
+margin_right = 568.0
+margin_bottom = 116.0
+rect_scale = Vector2( 3, 3 )
+
+[node name="Tutorial_Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_right = 208.0
+margin_bottom = 24.0
+theme = ExtResource( 5 )
+text = "Tutorial"
+
+[node name="Iguanopolis_Buttom" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 208.0
+margin_bottom = 52.0
+theme = ExtResource( 5 )
+text = "Iguanopolis"
+
+[node name="PipelinePine_button" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 208.0
+margin_bottom = 80.0
+theme = ExtResource( 5 )
+text = "S. Showroom"
+
+[node name="Testroom_button" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 208.0
+margin_bottom = 108.0
+theme = ExtResource( 5 )
+text = "Testroom"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = 24.0
+margin_top = 220.0
+margin_right = 340.0
+margin_bottom = 440.0
+color = Color( 0.537255, 0.47451, 0.886275, 1 )
+
+[node name="Character Select" type="OptionButton" parent="CanvasLayer"]
+margin_left = 52.0
+margin_top = 368.0
+margin_right = 312.0
+margin_bottom = 412.0
+theme = ExtResource( 5 )
+text = " Select"
+script = ExtResource( 11 )
+char1 = ExtResource( 12 )
+char2 = ExtResource( 13 )
+char3 = ExtResource( 14 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Character Select"]
+margin_left = -20.0
+margin_top = -124.0
+margin_right = 64.0
+margin_bottom = -40.0
+color = Color( 0.360784, 0, 1, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Character Select"]
+visible = false
+margin_left = 84.0
+margin_top = -124.0
+margin_right = 168.0
+margin_bottom = -40.0
+color = Color( 0.360784, 0, 1, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Character Select"]
+visible = false
+margin_left = 182.0
+margin_top = -124.0
+margin_right = 266.0
+margin_bottom = -40.0
+color = Color( 0.360784, 0, 1, 1 )
+
+[node name="Chartext" type="RichTextLabel" parent="CanvasLayer/Character Select"]
+margin_left = 4.0
+margin_top = -328.0
+margin_right = 264.0
+margin_bottom = -164.0
+text = "A
+
+Powers"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 72, 276 )
+scale = Vector2( 5, 5 )
+frames = ExtResource( 8 )
+animation = "Idle"
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 180, 276 )
+scale = Vector2( 5, 5 )
+frames = ExtResource( 10 )
+animation = "Idle"
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 276, 276 )
+scale = Vector2( 5, 5 )
+frames = ExtResource( 9 )
+animation = "Walk"
+frame = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 752, 372 )
+zoom = Vector2( 1.5, 1.5 )
+
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Tutorial_Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Iguanopolis_Buttom" to="." method="_on_Iguanopolis_Buttom_button_down"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/PipelinePine_button" to="." method="_on_PipelinePine_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Testroom_button" to="." method="_on_Testroom_button_button_down"]
+[connection signal="item_selected" from="CanvasLayer/Character Select" to="CanvasLayer/Character Select" method="_on_Character_Select_item_selected"]

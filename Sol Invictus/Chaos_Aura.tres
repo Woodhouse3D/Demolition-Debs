@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Other/polar_mask.png" type="Texture" id=1]
+[ext_resource path="res://Chaos_aura_shader.tres" type="Shader" id=2]
+
+[resource]
+shader = ExtResource( 2 )
+shader_param/mask = ExtResource( 1 )

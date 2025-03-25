@@ -1,0 +1,153 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Player_anim.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://player_physics_v3.gd" type="Script" id=2]
+[ext_resource path="res://character data/Harvey_Spriteframes.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Sprites/Characters/charge_blast.png" type="Texture" id=4]
+[ext_resource path="res://character data/Ultra.tres" type="Resource" id=5]
+[ext_resource path="res://character data/Harvey_Acc-curve.tres" type="Curve" id=6]
+[ext_resource path="res://Sprites/Other/homing_reticle.png" type="Texture" id=7]
+
+[sub_resource type="PhysicsMaterial" id=6]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Charge",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 11.0
+
+[node name="Player_RigidBody" type="RigidBody2D"]
+collision_layer = 2
+mode = 2
+physics_material_override = SubResource( 6 )
+continuous_cd = 2
+can_sleep = false
+linear_damp = 0.0
+script = ExtResource( 2 )
+char_data = ExtResource( 5 )
+move_wallstick = false
+move_machclimb = false
+move_dash = false
+Horizontal_Acceleration = ExtResource( 6 )
+speed_limit = 1200
+mach_speed = 300
+glue_force_damp = 30
+max_attach_angle = 70
+ball_gravitydownslope = 3.0
+debug = false
+floatdist = 24.0
+reticletexture = ExtResource( 7 )
+
+[node name="Rotator" type="Node2D" parent="."]
+position = Vector2( 0, -19 )
+scale = Vector2( 4, 4 )
+
+[node name="Mach" type="AnimatedSprite" parent="Rotator"]
+position = Vector2( 2, -1 )
+frames = SubResource( 21 )
+animation = "Charge"
+playing = true
+
+[node name="MainSprite" type="AnimatedSprite" parent="Rotator"]
+position = Vector2( 0, -3.75 )
+frames = ExtResource( 3 )
+animation = "Idle"
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rotator/MainSprite"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Rotator"]
+visible = false
+position = Vector2( 0, 19 )
+frames = ExtResource( 1 )
+animation = "Idle"
+offset = Vector2( 0, -25 )
+
+[node name="Ball_collider" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -23 )
+shape = SubResource( 5 )
+
+[node name="Ball_Sprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 1 )
+animation = "Ball"
+offset = Vector2( 0, -12.5 )
+
+[node name="Rays" type="Node2D" parent="."]
+position = Vector2( 0, -13 )
+
+[node name="CeilingRayL" type="RayCast2D" parent="Rays"]
+position = Vector2( -12, -13 )
+enabled = true
+cast_to = Vector2( 0, -10 )
+
+[node name="CeilingRayR" type="RayCast2D" parent="Rays"]
+position = Vector2( 12, -13 )
+enabled = true
+cast_to = Vector2( 0, -10 )
+
+[node name="LeftRay1" type="RayCast2D" parent="Rays"]
+position = Vector2( -1, -8 )
+enabled = true
+cast_to = Vector2( -20, 0 )
+
+[node name="RightRay2" type="RayCast2D" parent="Rays"]
+position = Vector2( 1, -8 )
+enabled = true
+cast_to = Vector2( 20, 0 )
+
+[node name="GroundRayL" type="RayCast2D" parent="Rays"]
+position = Vector2( -7, -10 )
+enabled = true
+
+[node name="GroundRayR" type="RayCast2D" parent="Rays"]
+position = Vector2( 7, -10 )
+enabled = true
+
+[node name="GroundRayM" type="RayCast2D" parent="Rays"]
+position = Vector2( 0, -10 )
+enabled = true
+cast_to = Vector2( 0, 28 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 112.0
+margin_top = -208.0
+margin_right = 379.0
+margin_bottom = -88.0
+color = Color( 0.0156863, 0.0313726, 0.0392157, 1 )
+
+[node name="Debugtext_rect" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = -200.0
+margin_right = 400.0
+margin_bottom = -157.0
+
+[node name="Debugtext" type="RichTextLabel" parent="Debugtext_rect"]
+margin_right = 280.0
+margin_bottom = 15.0
+text = "SX: 100 Sy: 100"
+fit_content_height = true
+
+[node name="CameraParent" type="Node2D" parent="."]
+position = Vector2( 0, -128 )
+
+[node name="Camera2D" type="Camera2D" parent="CameraParent"]
+position = Vector2( -1, -1 )
+current = true
+zoom = Vector2( 1.6, 1.6 )
+smoothing_enabled = true

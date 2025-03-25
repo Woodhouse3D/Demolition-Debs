@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Corner Piece" type="StaticBody2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 286, 9, 222, 60, 143, 64, 88, 56, -9, -12, -23, -139, 5, -286, 56, -326, 108, -298, 58, -251, 48, -187, 58, -111, 87, -58, 122, -26, 163, -9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -5, -1 )
+polygon = PoolVector2Array( 92, -56, 63, -109, 53, -187, 64, -251, 112, -297, 61, -325, 9, -285, -19, -135, -7, -50, -2, -11, 41, 21, 93, 56, 150, 65, 227, 61, 291, 9, 211, 0, 167, -8, 126, -26 )

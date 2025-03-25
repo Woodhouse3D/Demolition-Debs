@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player_anim.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://player_phys_test.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 12, 19 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 11.0
+
+[node name="Player_RigidBody" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="Full_collider" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -19 )
+shape = SubResource( 4 )
+
+[node name="Ball_collider" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -11 )
+shape = SubResource( 5 )
+
+[node name="Rotator" type="Node2D" parent="."]
+position = Vector2( 0, -19 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Rotator"]
+position = Vector2( 0, 19 )
+frames = ExtResource( 1 )
+animation = "Run"
+offset = Vector2( 0, -25 )
+
+[node name="Ball_Sprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 1 )
+animation = "Ball"
+offset = Vector2( 0, -12.5 )
+
+[node name="Rays" type="Node2D" parent="."]
+position = Vector2( 0, -19 )
+
+[node name="CeilingRayL" type="RayCast2D" parent="Rays"]
+position = Vector2( -12, -13 )
+enabled = true
+cast_to = Vector2( 0, -10 )
+
+[node name="CeilingRayR" type="RayCast2D" parent="Rays"]
+position = Vector2( 12, -13 )
+enabled = true
+cast_to = Vector2( 0, -10 )
+
+[node name="LeftRay1" type="RayCast2D" parent="Rays"]
+position = Vector2( -8, -1 )
+enabled = true
+cast_to = Vector2( -8, 0 )
+
+[node name="RightRay2" type="RayCast2D" parent="Rays"]
+position = Vector2( 8, -1 )
+enabled = true
+cast_to = Vector2( 8, 0 )
+
+[node name="GroundRayL" type="RayCast2D" parent="Rays"]
+position = Vector2( -12, 11 )
+enabled = true
+cast_to = Vector2( 0, 11 )
+
+[node name="GroundRayR" type="RayCast2D" parent="Rays"]
+position = Vector2( 12, 11 )
+enabled = true
+cast_to = Vector2( 0, 11 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = -47.0
+margin_top = -121.0
+margin_right = 233.0
+margin_bottom = -71.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+margin_right = 280.0
+margin_bottom = 15.0
+text = "SX: 100 Sy: 100"
+fit_content_height = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -51.0
+margin_top = -134.0
+margin_right = 233.0
+margin_bottom = -66.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color( 0.00784314, 0.0352941, 0.0313726, 1 )

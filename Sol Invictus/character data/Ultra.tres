@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://scripts/character_data.gd" type="Script" id=1]
+[ext_resource path="res://character data/Ultra_Spriteframes.tres" type="SpriteFrames" id=2]
+
+[sub_resource type="Curve" id=1]
+max_value = 800.0
+_data = [ Vector2( 0, 552.727 ), 0.0, -1037.58, 0, 0, Vector2( 0.447059, 298.182 ), 0.0, 0.0, 0, 0, Vector2( 0.498039, 792.727 ), -1511.11, -1511.11, 0, 0, Vector2( 0.664557, 240 ), -3338.18, -3338.18, 0, 0, Vector2( 0.727848, 50.9091 ), -320.428, -320.428, 0, 0, Vector2( 1, 21.8182 ), -21.265, 0.0, 0, 0 ]
+
+[resource]
+script = ExtResource( 1 )
+description = "Heavier than the others, but has a speed-bosting homing attack"
+frames = ExtResource( 2 )
+jump_force = 45000
+Horizontal_Acceleration = SubResource( 1 )
+mass = 1.0
+move_wallstick = false
+move_machclimb = true
+move_dash = false
+move_machturn = true
+move_drilldive = true
+move_homingattack = true
+move_spindash = true
+move_dropdash = false

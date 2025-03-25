@@ -1,0 +1,226 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/Background/sunset_background.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Background/Sunset_ground.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Terrain/iguanopolis_brickBA.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Terrain/iguanopolis_bricks.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Background/Iguanopolis_BigHills.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Background/sun.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Background/sunset_towers1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Decoration/Iguanopolis_waterfall.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Buildings/sunset_neartowersb.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Buildings/sunset_neartowers.png" type="Texture" id=12]
+
+[node name="background_SunsetShowroom" type="CanvasLayer"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sun" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 504, 288 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+
+[node name="SunsetBackground" type="Sprite" parent="ParallaxBackground"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Towers" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -308, -36 )
+motion_scale = Vector2( 0.1, 0.4 )
+motion_mirroring = Vector2( 2400, 0 )
+
+[node name="SunsetGround6" type="Sprite" parent="ParallaxBackground/Towers"]
+position = Vector2( 1176, -24 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+
+[node name="Towers" type="TextureRect" parent="ParallaxBackground/Towers"]
+margin_left = -92.0
+margin_top = -1004.0
+margin_right = 508.0
+margin_bottom = -804.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+stretch_mode = 2
+
+[node name="Hills" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, -200 )
+motion_scale = Vector2( 0.1, 0.4 )
+motion_mirroring = Vector2( 1200, 0 )
+
+[node name="IguanopolisBigHills3" type="Sprite" parent="ParallaxBackground/Hills"]
+position = Vector2( 588, -176 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="IguanopolisBigHills2" type="Sprite" parent="ParallaxBackground/Hills"]
+position = Vector2( -612, -176 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="SunsetGround2" type="Sprite" parent="ParallaxBackground/Hills"]
+position = Vector2( 8, 240 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="SunsetGround" type="Sprite" parent="ParallaxBackground/Hills"]
+position = Vector2( 4, 284 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="SunsetNeartowers2" type="Sprite" parent="ParallaxBackground/Hills"]
+position = Vector2( 64, -16 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+
+[node name="SunsetNeartowers" type="Sprite" parent="ParallaxBackground/Hills"]
+position = Vector2( 324, 24 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+
+[node name="Mid Buildings2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -16, 76 )
+motion_scale = Vector2( 0.3, 0.4 )
+motion_mirroring = Vector2( 2200, 0 )
+
+[node name="SunsetGround4" type="Sprite" parent="ParallaxBackground/Mid Buildings2"]
+position = Vector2( 92, 124 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+
+[node name="SunsetGround5" type="Sprite" parent="ParallaxBackground/Mid Buildings2"]
+position = Vector2( 3448, 124 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+
+[node name="SunsetNeartowers" type="Sprite" parent="ParallaxBackground/Mid Buildings2"]
+position = Vector2( 296, -436 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 12 )
+
+[node name="SunsetNeartowers2" type="Sprite" parent="ParallaxBackground/Mid Buildings2"]
+position = Vector2( 4764, -424 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 12 )
+
+[node name="Fore Buildings" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -8, 368 )
+motion_scale = Vector2( 0.6, 0.6 )
+motion_mirroring = Vector2( 2200, 0 )
+
+[node name="SunsetGround" type="Sprite" parent="ParallaxBackground/Fore Buildings"]
+position = Vector2( -2260, 44 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+
+[node name="SunsetNeartowers2" type="Sprite" parent="ParallaxBackground/Fore Buildings"]
+position = Vector2( 1544, -500 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 12 )
+
+[node name="SunsetNeartowers" type="Sprite" parent="ParallaxBackground/Fore Buildings"]
+position = Vector2( 344, -608 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+
+[node name="SunsetGround2" type="Sprite" parent="ParallaxBackground/Fore Buildings"]
+position = Vector2( 344, 44 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+
+[node name="Waterfalls" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 2200, 0 )
+
+[node name="TextureRect3" type="TextureRect" parent="ParallaxBackground/Waterfalls"]
+margin_left = -156.0
+margin_top = -74.0
+margin_right = -60.0
+margin_bottom = 10.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+margin_left = -1212.0
+margin_top = -82.0
+margin_right = -1019.0
+margin_bottom = -14.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+margin_left = 256.0
+margin_top = -82.0
+margin_right = 449.0
+margin_bottom = -14.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="IguanopolisBricks" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( -469, -16 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="IguanopolisBricks2" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( -391, 122 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="IguanopolisBricks10" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( -504, 122 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="IguanopolisBricks3" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( 311, -16 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="IguanopolisBricks4" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( 280, 126 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="IguanopolisBricks7" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( 519, -16 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="IguanopolisBricks8" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( 400, 126 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="IguanopolisBricks9" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( 552, 126 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="IguanopolisBricks5" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( -256, -22 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="IguanopolisBricks6" type="Sprite" parent="ParallaxBackground/Waterfalls"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( -232, 122 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )

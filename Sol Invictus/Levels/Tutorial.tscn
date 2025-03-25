@@ -1,0 +1,945 @@
+[gd_scene load_steps=52 format=2]
+
+[ext_resource path="res://Player_rb.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level Objects/Platforms/Platform Large.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level Objects/Platforms/C Curve.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprite_decoration.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://Sprites/Decoration/iguanopolis_totem.png" type="Texture" id=5]
+[ext_resource path="res://Level Objects/Platforms/Platform Small 2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Background_Iguanopolis.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level Objects/Platforms/Brick.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level Objects/Interactables/Destructable_Crate.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/Decoration/iguanopolis_mailbox.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Signs/Harvey_Sign.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Signs/arrow.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Signs/Stop-Sign.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Other/red Circule.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Buildings/Iguanopolis_moderntower.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Signs/Mach_Dash_sign.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Signs/Sign_Jump.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Decoration/iguanopolis_marduk_statue.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Decoration/marduk_badge.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Ottbots/Ottbot_Met.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Signs/Sign_Groundpound.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Terrain/iguanopolis_Pedistal.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Ottbots/ottbot_arm.png" type="Texture" id=23]
+[ext_resource path="res://Level Objects/Platforms/Iguanopolis_Slope_2by1.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Level Objects/Platforms/Iguanopolis_Slope_1B1.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Level Objects/Platforms/Iguanopolis_PlatformA.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Level Objects/Platforms/Iguanopolis_PlatformC.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Sprites/Terrain/Iguanopolis_brickworkB.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Decoration/food_stand.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Decoration/Iguanopolis_window.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Decoration/iguanopolis_Lamppost.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Terrain/iguanopolis_brickB.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Decoration/Iguanopolis_CarvingB.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Terrain/iguanopolis_cobblesA.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Terrain/iguanopolis_brickBA.png" type="Texture" id=35]
+[ext_resource path="res://Level Objects/Platforms/Iguanopolis_Slope_1B05.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Level Objects/Interactables/Spring_test.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Level Objects/Interactables/Goal_Ring.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Level Objects/Platforms/Mech_SemisolidMed.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Sprites/Signs/Sign_MachTurn.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Decoration/Construction_Truss.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Buildings/iguanopolis_oldbuilding.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/Signs/warning_sign.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/Decoration/Iguanopolis_Drain.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/Decoration/Fire_Hydrant.png" type="Texture" id=45]
+[ext_resource path="res://Level Objects/Interactables/Spring_Red.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Game_UI.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Level Objects/Platforms/Iguanopolis_DcurveB.tscn" type="PackedScene" id=48]
+[ext_resource path="res://Sprites/Plants/iguanopolis_bushB.png" type="Texture" id=49]
+[ext_resource path="res://Level Objects/Interactables/Ring_Static.tscn" type="PackedScene" id=50]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 56, 766 )
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="UI" parent="." instance=ExtResource( 47 )]
+
+[node name="Goal_Ring" parent="." instance=ExtResource( 38 )]
+position = Vector2( 4864, -596 )
+
+[node name="Background_Decor" type="Node2D" parent="."]
+
+[node name="Truss" type="TextureRect" parent="Background_Decor"]
+margin_left = 3100.0
+margin_top = -664.0
+margin_right = 3109.0
+margin_bottom = -489.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 41 )
+stretch_mode = 2
+
+[node name="IguanopolisLamppost3" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( -136, -152 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 31 )
+
+[node name="IguanopolisOldbuilding" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( -524, -92 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 42 )
+
+[node name="IguanopolisOldbuilding3" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( -268, -92 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 42 )
+
+[node name="IguanopolisOldbuilding2" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( 1096, -268 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 42 )
+
+[node name="Truss6" type="TextureRect" parent="Background_Decor"]
+margin_left = 2932.0
+margin_top = -380.0
+margin_right = 2941.0
+margin_bottom = -279.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 41 )
+stretch_mode = 2
+
+[node name="Truss2" type="TextureRect" parent="Background_Decor"]
+margin_left = 3264.0
+margin_top = -664.0
+margin_right = 3273.0
+margin_bottom = -492.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 41 )
+stretch_mode = 2
+
+[node name="Truss3" type="TextureRect" parent="Background_Decor"]
+margin_left = 1784.0
+margin_top = -356.0
+margin_right = 1793.0
+margin_bottom = -260.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 41 )
+stretch_mode = 2
+
+[node name="Truss4" type="TextureRect" parent="Background_Decor"]
+margin_left = -488.0
+margin_top = -364.0
+margin_right = -479.0
+margin_bottom = -273.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 41 )
+stretch_mode = 2
+
+[node name="Truss5" type="TextureRect" parent="Background_Decor"]
+margin_left = -1060.0
+margin_top = -328.0
+margin_right = -1051.0
+margin_bottom = -240.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 41 )
+stretch_mode = 2
+
+[node name="Truss7" type="TextureRect" parent="Background_Decor"]
+margin_left = -2240.0
+margin_top = -264.0
+margin_right = -2231.0
+margin_bottom = -199.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 41 )
+stretch_mode = 2
+
+[node name="SignMachTurn" type="Sprite" parent="Background_Decor"]
+position = Vector2( 3200, -556 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 40 )
+
+[node name="IguanopolisModerntower" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
+position = Vector2( -1256, -224 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+
+[node name="IguanopolisModerntower2" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
+position = Vector2( -1460, -224 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+
+[node name="IguanopolisModerntower3" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
+position = Vector2( -1652, -224 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+
+[node name="IguanopolisModerntower4" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
+position = Vector2( -1832, -224 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+
+[node name="IguanopolisModerntower5" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
+position = Vector2( -2496, -228 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+
+[node name="IguanopolisModerntower6" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
+position = Vector2( -2676, -228 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+
+[node name="HarveySign" type="Sprite" parent="Background_Decor"]
+position = Vector2( -1188, -216 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 11 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Background_Decor"]
+modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
+position = Vector2( -276, -60 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 4 )
+animation = "Blue"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Background_Decor"]
+modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
+position = Vector2( -478, -60 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 4 )
+animation = "Red"
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Background_Decor"]
+modulate = Color( 0.882353, 0.882353, 0.882353, 1 )
+position = Vector2( -1216, -64 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 4 )
+animation = "Red"
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Background_Decor"]
+modulate = Color( 0.882353, 0.882353, 0.882353, 1 )
+position = Vector2( -1428, -64 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 4 )
+animation = "Yellow"
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Background_Decor"]
+modulate = Color( 0.882353, 0.882353, 0.882353, 1 )
+position = Vector2( -1642, -64 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 4 )
+animation = "Red"
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Background_Decor"]
+modulate = Color( 0.882353, 0.882353, 0.882353, 1 )
+position = Vector2( -2544, -60 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 4 )
+animation = "Red"
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Background_Decor"]
+modulate = Color( 0.882353, 0.882353, 0.882353, 1 )
+position = Vector2( -1854, -64 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 4 )
+animation = "Yellow"
+
+[node name="TextureRect" type="TextureRect" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+margin_left = 1916.0
+margin_top = -448.0
+margin_right = 2022.0
+margin_bottom = -334.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+stretch_mode = 2
+
+[node name="TextureRect8" type="TextureRect" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+margin_left = 4532.0
+margin_top = -896.0
+margin_right = 4566.0
+margin_bottom = -673.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 35 )
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+margin_left = 2012.0
+margin_top = -628.0
+margin_right = 2072.0
+margin_bottom = -591.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Background_Decor"]
+margin_left = 2344.0
+margin_top = -240.0
+margin_right = 2411.0
+margin_bottom = -179.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+stretch_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="Background_Decor"]
+margin_left = 2580.0
+margin_top = -68.0
+margin_right = 2661.0
+margin_bottom = -31.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+stretch_mode = 2
+
+[node name="TextureRect6" type="TextureRect" parent="Background_Decor"]
+margin_left = 2536.0
+margin_top = -120.0
+margin_right = 2596.0
+margin_bottom = -83.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+stretch_mode = 2
+
+[node name="TextureRect7" type="TextureRect" parent="Background_Decor"]
+margin_left = 2444.0
+margin_top = -180.0
+margin_right = 2504.0
+margin_bottom = -143.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Background_Decor"]
+margin_left = -3200.0
+margin_top = 2.0
+margin_right = -928.0
+margin_bottom = 124.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 34 )
+stretch_mode = 2
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Background_Decor"]
+modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
+position = Vector2( 1148, -62 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 4 )
+animation = "Yellow"
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Background_Decor"]
+modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
+position = Vector2( 2140, -62 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 4 )
+animation = "Yellow"
+
+[node name="IguanopolisTotem2" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
+position = Vector2( 356, -116 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="IguanopolisTotem3" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
+position = Vector2( 984, -116 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="IguanopolisTotem4" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( -620, -116 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="IguanopolisMailbox" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.666667, 0.666667, 0.666667, 1 )
+position = Vector2( -748, -72 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
+[node name="Stop-Sign" type="Sprite" parent="Background_Decor"]
+position = Vector2( -2216, -204 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
+
+[node name="MardukBadge" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
+position = Vector2( 740, -180 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+
+[node name="Arrow" type="Sprite" parent="Background_Decor"]
+position = Vector2( -1100, -112 )
+rotation = 2.35619
+scale = Vector2( 1.7, 2 )
+texture = ExtResource( 12 )
+
+[node name="FoodStand" type="Sprite" parent="Background_Decor"]
+position = Vector2( 436, -84 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="IguanopolisMardukStatue2" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( 3168, -103 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 18 )
+
+[node name="FoodStand2" type="Sprite" parent="Background_Decor"]
+position = Vector2( -2124, -84 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="IguanopolisLamppost" type="Sprite" parent="Background_Decor"]
+position = Vector2( 1324, -152 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 31 )
+
+[node name="IguanopolisLamppost2" type="Sprite" parent="Background_Decor"]
+position = Vector2( 2556, -400 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 31 )
+
+[node name="IguanopolisWindow" type="Sprite" parent="Background_Decor"]
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
+position = Vector2( 2024, -356 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 30 )
+
+[node name="IguanopolisWindow2" type="Sprite" parent="Background_Decor"]
+position = Vector2( 2484, -108 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 30 )
+
+[node name="FireHydrant" type="Sprite" parent="Background_Decor"]
+position = Vector2( 2448, -272 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 45 )
+
+[node name="FireHydrant2" type="Sprite" parent="Background_Decor"]
+position = Vector2( 149, -24 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 45 )
+
+[node name="IguanopolisBush2" type="Sprite" parent="Background_Decor"]
+position = Vector2( 120, -74 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 49 )
+centered = false
+
+[node name="IguanopolisBush3" type="Sprite" parent="Background_Decor"]
+position = Vector2( 1316, -82 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 49 )
+centered = false
+
+[node name="IguanopolisBush4" type="Sprite" parent="Background_Decor"]
+position = Vector2( 1616, -76 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 49 )
+centered = false
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="Platform Large" parent="Terrain" instance=ExtResource( 2 )]
+
+[node name="Platform Large5" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( -2532, 0 )
+
+[node name="Platform Large3" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( 908, 0 )
+
+[node name="Platform Large6" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( 1816, 0 )
+
+[node name="Platform Large7" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( 2552, 0 )
+
+[node name="Platform Large8" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( 3448, 0 )
+
+[node name="Platform Large2" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( -849, 0 )
+
+[node name="Platform Large4" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( -1732, 0 )
+
+[node name="Brick" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( -760, -100 )
+
+[node name="Brick2" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( -736, -100 )
+
+[node name="Brick3" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( 24, -32 )
+
+[node name="Brick4" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( 708, -20 )
+
+[node name="Brick5" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( 772, -20 )
+
+[node name="Platform Small 2" parent="Terrain" instance=ExtResource( 6 )]
+position = Vector2( 740, -64 )
+
+[node name="C-Curve" parent="Terrain" instance=ExtResource( 3 )]
+position = Vector2( 1472, 4 )
+scale = Vector2( -2, 2 )
+
+[node name="C-Curve3" parent="Terrain" instance=ExtResource( 3 )]
+position = Vector2( 3440, 4 )
+scale = Vector2( -2, 2 )
+
+[node name="C-Curve4" parent="Terrain" instance=ExtResource( 3 )]
+position = Vector2( 3488, 8 )
+rotation = 1.57079
+scale = Vector2( -2, 2 )
+
+[node name="C-Curve2" parent="Terrain" instance=ExtResource( 3 )]
+position = Vector2( 1600, 4 )
+rotation = 1.5708
+scale = Vector2( -2, 2 )
+
+[node name="Platform Small 3" parent="Terrain" instance=ExtResource( 6 )]
+position = Vector2( 1536, -140 )
+
+[node name="Platform Small 8" parent="Terrain" instance=ExtResource( 6 )]
+position = Vector2( 4600, -140 )
+
+[node name="Platform Small 4" parent="Terrain" instance=ExtResource( 6 )]
+position = Vector2( 1900, -188 )
+rotation = 1.5708
+
+[node name="Platform Small 5" parent="Terrain" instance=ExtResource( 6 )]
+position = Vector2( 1900, -316 )
+rotation = 1.5708
+
+[node name="Platform Small 6" parent="Terrain" instance=ExtResource( 6 )]
+position = Vector2( 1836, -364 )
+rotation = -3.14159
+
+[node name="Platform Small 7" parent="Terrain" instance=ExtResource( 6 )]
+position = Vector2( 1788, -412 )
+rotation = -1.5708
+
+[node name="Brick6" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( 1900, -92 )
+
+[node name="Iguanopolis_Slope_2by1" parent="Terrain" instance=ExtResource( 24 )]
+position = Vector2( 2236, -20 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Iguanopolis_Slope_2by2" parent="Terrain" instance=ExtResource( 24 )]
+position = Vector2( 2780, -96 )
+rotation = 3.14159
+scale = Vector2( -1, -1 )
+
+[node name="Iguanopolis_Slope_2by3" parent="Terrain" instance=ExtResource( 24 )]
+position = Vector2( 2996, 12 )
+rotation = 3.14159
+scale = Vector2( -1, -1 )
+
+[node name="Iguanopolis_Slope_1B1" parent="Terrain" instance=ExtResource( 25 )]
+position = Vector2( 2132, -264 )
+
+[node name="Iguanopolis_Slope_1B2" parent="Terrain" instance=ExtResource( 25 )]
+position = Vector2( 2608, -248 )
+
+[node name="Iguanopolis_Slope_1B05" parent="Terrain/Iguanopolis_Slope_1B2" instance=ExtResource( 36 )]
+position = Vector2( 308.786, -156 )
+
+[node name="Iguanopolis_PlatformA" parent="Terrain" instance=ExtResource( 26 )]
+position = Vector2( 2024, -264 )
+
+[node name="Iguanopolis_PlatformA5" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 2336, -112 )
+rotation = -1.5708
+
+[node name="Construct_semisolidA" parent="Terrain" instance=ExtResource( 39 )]
+position = Vector2( 3236, -380 )
+
+[node name="Iguanopolis_PlatformA7" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3436, -110 )
+rotation = -1.5708
+
+[node name="Iguanopolis_PlatformA8" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3436, -316 )
+rotation = -1.5708
+
+[node name="Iguanopolis_PlatformA11" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3436, -540 )
+rotation = -1.5708
+
+[node name="Iguanopolis_PlatformA12" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3376, -720 )
+
+[node name="Iguanopolis_PlatformA15" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3604, -720 )
+
+[node name="Iguanopolis_PlatformA16" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3896, -552 )
+
+[node name="Iguanopolis_PlatformA30" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 4192, -412 )
+rotation = 1.57079
+
+[node name="Iguanopolis_PlatformA31" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 4192, -652 )
+rotation = 1.57079
+
+[node name="Iguanopolis_PlatformA32" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 4192, -772 )
+rotation = 1.57079
+
+[node name="Iguanopolis_PlatformA20" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3744, -552 )
+
+[node name="Iguanopolis_PlatformA19" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3704, -720 )
+
+[node name="Iguanopolis_PlatformA17" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3600, -380 )
+
+[node name="Iguanopolis_PlatformA18" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3764, -380 )
+
+[node name="Iguanopolis_PlatformA21" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3900, -216 )
+
+[node name="Iguanopolis_PlatformA22" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3748, -216 )
+
+[node name="Iguanopolis_PlatformA23" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 5200, -960 )
+
+[node name="Iguanopolis_PlatformA24" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 5048, -960 )
+
+[node name="Iguanopolis_PlatformA25" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 4820, -960 )
+
+[node name="Iguanopolis_PlatformA26" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 4668, -960 )
+
+[node name="Iguanopolis_PlatformA27" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 4472, -960 )
+
+[node name="Iguanopolis_PlatformA28" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 4320, -960 )
+
+[node name="Iguanopolis_PlatformA29" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 4164, -960 )
+
+[node name="Iguanopolis_PlatformA13" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3196, -720 )
+
+[node name="Iguanopolis_PlatformA14" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 2960, -720 )
+
+[node name="Iguanopolis_PlatformA2" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 2472, -248 )
+
+[node name="Iguanopolis_PlatformA9" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 3104, -380 )
+
+[node name="Iguanopolis_PlatformA3" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 2236, -504 )
+
+[node name="Dcurve" parent="Terrain" instance=ExtResource( 48 )]
+position = Vector2( 56, 80 )
+
+[node name="Iguanopolis_PlatformA4" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 2020, -504 )
+
+[node name="Iguanopolis_PlatformA6" parent="Terrain" instance=ExtResource( 27 )]
+position = Vector2( 2132, -668 )
+
+[node name="Brick7" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( 1916, -536 )
+
+[node name="Ivisible_wall" type="StaticBody2D" parent="Terrain"]
+position = Vector2( -2180, -364 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Ivisible_wall"]
+position = Vector2( -32, -356 )
+shape = SubResource( 1 )
+
+[node name="Platform Large9" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( 4352, 0 )
+
+[node name="Platform Large10" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( 4016, -156 )
+rotation = -1.57079
+
+[node name="Platform Large11" parent="Terrain" instance=ExtResource( 2 )]
+position = Vector2( 5272, 10 )
+rotation = -1.57079
+
+[node name="C-Curve5" parent="Terrain" instance=ExtResource( 3 )]
+position = Vector2( 4536, 4 )
+scale = Vector2( -2, 2 )
+
+[node name="C-Curve6" parent="Terrain" instance=ExtResource( 3 )]
+position = Vector2( 4664, 4 )
+rotation = 1.5708
+scale = Vector2( -2, 2 )
+
+[node name="C-Curve7" parent="Terrain" instance=ExtResource( 3 )]
+position = Vector2( 5272, 2 )
+scale = Vector2( -2, 2 )
+
+[node name="C-Curve8" parent="Terrain" instance=ExtResource( 3 )]
+position = Vector2( 5272, -900 )
+rotation = -1.57079
+scale = Vector2( -2, 2 )
+
+[node name="C-Curve9" parent="Terrain" instance=ExtResource( 3 )]
+position = Vector2( 4188, -904 )
+rotation = -3.14159
+scale = Vector2( -2, 2 )
+
+[node name="Brick8" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( 3864, -308 )
+
+[node name="Brick9" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( 3652, -472 )
+
+[node name="Brick10" parent="Terrain" instance=ExtResource( 8 )]
+position = Vector2( 3808, -644 )
+
+[node name="Dcurve2" parent="Terrain" instance=ExtResource( 48 )]
+position = Vector2( 4048, -301 )
+rotation = 1.57079
+
+[node name="ConerFix" type="StaticBody2D" parent="Terrain"]
+position = Vector2( 1536, -140 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/ConerFix"]
+polygon = PoolVector2Array( -64, -16, -72, 16, 72, 16, 64, -16 )
+
+[node name="ConerFix2" type="StaticBody2D" parent="Terrain"]
+position = Vector2( 4600, -140 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/ConerFix2"]
+polygon = PoolVector2Array( -64, -16, -72, 16, 72, 16, 64, -16 )
+
+[node name="Interactable" type="Node2D" parent="."]
+
+[node name="Destructable_Crate" parent="Interactable" instance=ExtResource( 9 )]
+position = Vector2( -748, -30 )
+
+[node name="Destructable_Crate2" parent="Interactable" instance=ExtResource( 9 )]
+position = Vector2( 740, -108 )
+
+[node name="Destructable_Crate3" parent="Interactable" instance=ExtResource( 9 )]
+position = Vector2( 1900, -30 )
+
+[node name="Spring2" parent="Interactable" instance=ExtResource( 37 )]
+position = Vector2( 2276, -676 )
+rotation = 0.785397
+
+[node name="Spring4" parent="Interactable" instance=ExtResource( 37 )]
+position = Vector2( 624, -16 )
+
+[node name="Spring5" parent="Interactable" instance=ExtResource( 46 )]
+position = Vector2( 820, -32 )
+rotation = 1.57079
+
+[node name="Spring" parent="Interactable" instance=ExtResource( 46 )]
+position = Vector2( 1932, -292 )
+rotation = 1.57079
+
+[node name="Destructable_Crate4" parent="Interactable" instance=ExtResource( 9 )]
+position = Vector2( 3648, -412 )
+
+[node name="Destructable_Crate5" parent="Interactable" instance=ExtResource( 9 )]
+position = Vector2( 3808, -584 )
+
+[node name="Destructable_Crate6" parent="Interactable" instance=ExtResource( 9 )]
+position = Vector2( 3864, -248 )
+
+[node name="Ring_Static" parent="Interactable" instance=ExtResource( 50 )]
+position = Vector2( -1404, -87 )
+
+[node name="Ring_Static2" parent="Interactable" instance=ExtResource( 50 )]
+position = Vector2( -1472, -87 )
+
+[node name="Ring_Static3" parent="Interactable" instance=ExtResource( 50 )]
+position = Vector2( -1532, -87 )
+rotation = -6.28318
+
+[node name="Ring_Static" parent="Interactable/Ring_Static3" instance=ExtResource( 50 )]
+position = Vector2( 1340, -15.0119 )
+
+[node name="Ring_Static2" parent="Interactable/Ring_Static3" instance=ExtResource( 50 )]
+position = Vector2( 1396, -53.0124 )
+
+[node name="Ring_Static3" parent="Interactable/Ring_Static3" instance=ExtResource( 50 )]
+position = Vector2( 1460, -85.013 )
+
+[node name="Ring_Static4" parent="Interactable" instance=ExtResource( 50 )]
+position = Vector2( 432, -96 )
+
+[node name="Ring_Static5" parent="Interactable" instance=ExtResource( 50 )]
+position = Vector2( 512, -124 )
+
+[node name="Ring_Static6" parent="Interactable" instance=ExtResource( 50 )]
+position = Vector2( 1448, -280 )
+
+[node name="Ring_Static7" parent="Interactable" instance=ExtResource( 50 )]
+position = Vector2( 1448, -332 )
+
+[node name="Ring_Static8" parent="Interactable" instance=ExtResource( 50 )]
+position = Vector2( 1620, -280 )
+
+[node name="Ring_Static9" parent="Interactable" instance=ExtResource( 50 )]
+position = Vector2( 1620, -332 )
+
+[node name="Foreground_Decor" type="Node2D" parent="."]
+
+[node name="OttbotArm" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( -2436, -172 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 23 )
+centered = false
+
+[node name="OttbotMet" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( -2444, -68 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="WarningSign" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( -2304, -108 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 43 )
+centered = false
+
+[node name="TextureRect5" type="TextureRect" parent="Foreground_Decor"]
+margin_left = -3036.0
+margin_right = -773.0
+margin_bottom = 17.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 35 )
+stretch_mode = 2
+
+[node name="IguanopolisMardukStatue" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( 739, -36 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 22 )
+
+[node name="IguanopolisTotem5" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( -748, -180 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="RedCircule" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( -1008, -32 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 14 )
+
+[node name="MachDashSign" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( -512, -284 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 16 )
+
+[node name="JumpSign" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( 20, 52 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 17 )
+
+[node name="SignGroundpound" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( 1740, -236 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 21 )
+
+[node name="TextureRect" type="TextureRect" parent="Foreground_Decor"]
+margin_left = 1472.0
+margin_top = -128.0
+margin_right = 1504.0
+margin_bottom = -95.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 32 )
+stretch_mode = 2
+
+[node name="IguanopolisCarvingB" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( 1536, -66 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 33 )
+
+[node name="IguanopolisDrain" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( -752, 100 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 44 )
+
+[node name="IguanopolisDrain2" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( -1688, 96 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 44 )
+
+[node name="IguanopolisDrain3" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( 1300, 104 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 44 )
+
+[node name="IguanopolisDrain4" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( 364, 100 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 44 )
+
+[node name="IguanopolisDrain5" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( 3032, 120 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 44 )
+
+[node name="IguanopolisDrain6" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( 2096, 116 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 44 )
+
+[node name="TextureRect2" type="TextureRect" parent="Foreground_Decor"]
+margin_left = 4536.0
+margin_top = -156.0
+margin_right = 4568.0
+margin_bottom = -117.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 32 )
+stretch_mode = 2
+
+[node name="IguanopolisCarvingB2" type="Sprite" parent="Foreground_Decor"]
+position = Vector2( 4600, -66 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 33 )
+
+[node name="Player_RigidBody" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1016, -8 )
+
+[node name="Iguanopolis_background" parent="." instance=ExtResource( 7 )]
+
+[node name="Ring_Static" parent="." instance=ExtResource( 50 )]
+position = Vector2( 2708, -200 )
+
+[node name="Ring_Static2" parent="." instance=ExtResource( 50 )]
+position = Vector2( 2816, -140 )
+
+[node name="Ring_Static3" parent="." instance=ExtResource( 50 )]
+position = Vector2( 2948, -80 )
+
+[node name="Ring_Static4" parent="." instance=ExtResource( 50 )]
+position = Vector2( 2404, -776 )
+
+[node name="Ring_Static5" parent="." instance=ExtResource( 50 )]
+position = Vector2( 2524, -844 )
+
+[node name="Ring_Static6" parent="." instance=ExtResource( 50 )]
+position = Vector2( 2644, -884 )
+
+[node name="Ring_Static7" parent="." instance=ExtResource( 50 )]
+position = Vector2( 1788, -512 )
+
+[node name="Ring_Static8" parent="." instance=ExtResource( 50 )]
+position = Vector2( 1788, -564 )

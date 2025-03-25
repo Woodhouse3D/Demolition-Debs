@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Interactables/Crate 2.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Destructable_Crate.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 30 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 60, 40 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+
+[node name="Destructable_Crate" type="RigidBody2D"]
+mode = 1
+script = ExtResource( 2 )
+
+[node name="OttoCrate" type="Sprite" parent="."]
+position = Vector2( -28, -28 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+visible = false
+position = Vector2( 2, 2 )
+explosiveness = 1.0
+process_material = SubResource( 3 )
+texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

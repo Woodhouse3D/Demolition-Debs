@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Terrain/Iguanopolis_slope_1b1.png" type="Texture" id=1]
+
+[node name="Iguanopolis_Slope_1B1" type="StaticBody2D"]
+scale = Vector2( 1.01041, 1 )
+
+[node name="IguanopolisSlope1B1" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 31.6703, 64 )
+build_mode = 1
+polygon = PoolVector2Array( -31.6702, -64, 31.6702, 0, 31.6702, 60, -31.6702, 0, -39.5879, 0, -39.5879, -64 )
